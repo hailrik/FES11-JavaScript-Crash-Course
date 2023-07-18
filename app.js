@@ -178,3 +178,5 @@ let strName = "Frontend Simplified";
 for (let i = 0; i < strName.length; i++) {
   console.log(strName[i]);
 }
+
+ 
