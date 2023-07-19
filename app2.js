@@ -87,16 +87,16 @@ console.log(newArr);
 // It checks the next element and so on
 
 // Shorter ways of doing things
-let arr1 = [30, 25, 43, 79, 10];
+let arr2 = [30, 25, 43, 79, 10];
 
 //You don't need brakets around the element as it is the only variable being called
-let newArr1 = arr1.filter((element) => {
+let newArr2 = arr2.filter((element) => {
   return element < 50;
 });
-console.log(newArr1);
-
-let newArr2 = arr1.filter((element) => element < 50);
 console.log(newArr2);
+
+let newerArr2 = arr2.filter((element) => element < 50);
+console.log(newerArr2);
 
 //practice
 
@@ -121,3 +121,83 @@ for (let i = 0; i < grades.length; ++i) {
 
 console.log(betterGrades);
 
+// Array Maps
+// The map element works by iterating over every element
+// It looks at the return statement and returns the element whatever we have set
+
+let arr3 = [1, 4, 9, 16];
+
+let newArr3 = arr3.map((element) => {
+  return undefined;
+});
+
+console.log(newArr3);
+
+// Written agaain but simpler
+let newerArr3 = arr3.map((element) => element);
+console.log(newerArr3);
+
+// practice
+
+let dollars = [1, 5, 10, 3];
+
+let cents = dollars.map((element) => {
+  return element * 100;
+});
+console.log(cents);
+
+let newCents = dollars.map((element) => element * 100);
+console.log(newCents);
+
+// practice with for loop instead of map
+
+let newerCents = [];
+
+for (let i = 0; i <= dollars.length - 1; i++) {
+  newerCents.push(dollars[i] * 100);
+}
+
+console.log(newerCents);
+
+// Objects - defined using curly brackets {}
+// allows you to access a property more easily
+// You can put arrays in objects and access them just the same as you normall would
+
+let user = [
+  {
+    username: "Rahik",
+    email: "rahikomi12@gmail.com",
+    password: "test123",
+    subscriptionStatus: "VIP",
+    discordId: "programmer#0984",
+    lessonsComplete: [0, 1],
+  },
+  {
+    username: "Mitri",
+    email: "Mitri@gmail.com",
+    password: "Mitri123",
+    subscriptionStatus: "VIP+",
+    discordId: "Hornelf#0602",
+    lessonsComplete: [0, 1, 2, 3],
+  },
+];
+
+console.log(user[0]);
+console.log(user[1].lessonsComplete.map((elem) => elem * 2));
+
+function logIn(email, password) {
+  for (let i = 0; i < user.length; i++) {
+    if (user[i].email === email) {
+      console.log(user[i]);
+      if (user[i].password === password) {
+        console.log("Correct details");
+      } else {
+        console.log("Wrong password, try again");
+      }
+      return;
+    }
+  }
+  console.log("Could Not find an email that matches our records");
+}
+
+logIn("rahikomi12@gmail.com", "test123");
