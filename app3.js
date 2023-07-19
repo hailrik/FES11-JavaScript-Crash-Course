@@ -1,3 +1,5 @@
+//Practicing objects 
+
 let users = [
   {
     username: "Rahik",
@@ -82,3 +84,29 @@ registeration({
   discordId: "Demitri#1234",
   lessonsCompleted: [1, 2, 3, 4],
 });
+
+//DOM - The Document Object Model
+// Allows us to change the styling of elements of our website
+
+
+//First way fo accessing the element
+console.log(document.querySelector('#title'));
+
+//Second way fo accessing the element -- best practise 
+console.log(document.getElementById('title'));
+
+//Changing HTML
+document.querySelector('#title').innerHTML = "Front End Simplified"
+document.querySelector('#title').innerHTML += " - It's Great"
+
+//Changing CSS
+document.querySelector(".title").style.fontSize = '38px'
+
+// on click linking
+function changeTitleToRed() {
+    document.querySelector(".title").style.color = 'red'
+}
+
+function toggleDarkMode() {
+    document.querySelector('body').classList.toggle("dark-theme")
+} 
